@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <style>
+  
+:root {
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway",  sans-serif;
+  --nav-font: "Inter",  sans-serif;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root { 
+  --background-color: #000910; /* Background color for the entire website, including individual sections */
+  --default-color:  #000910;; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #273d4e; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #e39c3e; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  --nav-color: #e5eaee;  /* The default color of the main navmenu links */
+  --nav-hover-color:  #e39c3e; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #e39c3e; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.light-background {
+  --background-color:  #000910;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #000910;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #e39c3e;
+  --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+  text-decoration: none;
+}
+
+  a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+  .score-container {
+      display: flex;
+      gap: 4px;
+      min-width: 140px;
+      justify-content: center;
+    }
+    .score-box {
+      background-color: #4a4f54;
+      color: #ffffff;
+      width: 36px;
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1;
+      position: relative;
+    }
+    .score-box.abbr {
+      font-size: 11px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+@media (max-width: 767px) {
+  .container45 {
+    padding: 8px 12px;
+  }
+
+  .match {
+    font-size: 12px;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .team {
+    color: #ffffff;
+    font-size: 12px;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .team.left {
+    text-align: left;
+    padding-right: 8px;
+  }
+
+  .team.right {
+    text-align: right;
+    padding-left: 8px;
+  }
+
+  .score-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    flex-shrink: 0;
+  }
+
+  .score-box {
+    background-color: #4a4f54;
+    color: #ffffff;
+    width: 36px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: none;
+    margin: 0 2px;
+  }
+
+  .score-box.abbr {
+    font-size: 9px;
+    margin-bottom: 2px;
+  }
+}
+
+</style>
+
+</head>
+<body class="index-page">
+
+  <main class="main">
+       <div class="container45">
+    <div class="date">
+      <strong>Saturday</strong> <span>18 May</span>
+    </div>
+
+    <div class="match">
+      <div class="team left">CSE</div>
+      <div class="score-container">
+        <div>
+          <div class="score-box abbr">V</div>
+          
+        </div>
+        <div>
+          <div class="score-box abbr">S</div>
+         
+        </div>
+      </div>
+      <div class="team right">EEE</div>
+    </div>
+
+    <div class="match">
+      <div class="team left">BBA</div>
+      <div class="score-container">
+        <div>
+          <div class="score-box abbr">V</div>
+          
+        </div>
+        <div>
+          <div class="score-box abbr">S</div>
+        
+        </div>
+      </div>
+      <div class="team right">English</div>
+    </div>
+
+    <div class="match">
+      <div class="team left">LAW</div>
+      <div class="score-container">
+        <div>
+          <div class="score-box abbr">V</div>
+     
+        </div>
+        <div>
+          <div class="score-box abbr">S</div>
+         
+        </div>
+      </div>
+      <div class="team right">Pharmacy</div>
+    </div>
+
+    <div class="match">
+      <div class="team left">ACDC</div>
+      <div class="score-container">
+        <div>
+          <div class="score-box abbr">V</div>
+      
+        </div>
+        <div>
+          <div class="score-box abbr">S</div>
+          
+        </div>
+      </div>
+      <div class="team right">Sociology</div>
+    </div>
+
+      </div>
+
+    </section><!-- /Starter Section Section -->
+
+  </main>
+
+
+
+</body>
+
+</html>
